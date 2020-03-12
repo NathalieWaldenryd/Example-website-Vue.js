@@ -1,0 +1,13 @@
+FROM node:12.0.0
+ENV APP_ROOT /app
+
+RUN mkdir ${APP_ROOT}
+WORKDIR ${APP_ROOT}
+ADD . ${APP_ROOT}
+
+RUN npm install
+RUN npm run build
+
+EXPOSE 5555
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=5555

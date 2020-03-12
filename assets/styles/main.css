@@ -1,0 +1,40 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 90%;
+  }
+}
+
+.burger {
+  color: black;
+}
+
+/* logo color */
+a.navbar-item.color-loggo {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* general links not active color */
+a.navbar-item {
+  color: rgb(255, 255, 255);
+}
+
+/* active links color */
+a.navbar-item.is-active {
+  color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 1025px) {
+  a.navbar-item {
+    color: rgb(0, 0, 0);
+  }
+
+  a.navbar-item.is-active {
+    color: rgb(0, 0, 0);
+  }
+}

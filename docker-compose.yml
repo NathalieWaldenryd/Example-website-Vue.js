@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  nuxt:
+    build: .
+    container_name: "nuxt"
+    restart: always
+    ports:
+      - "5555:5555"
+    command:
+      "npm run start"
+
+  nginx:
+    image: nginx:1.15-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./.certs:/.certs
