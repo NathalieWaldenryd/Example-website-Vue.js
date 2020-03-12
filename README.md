@@ -2,11 +2,7 @@
 
 ## Build Setup
 
-update `nginx/default.conf` to match:
-``` bash
-ssl_certificate /.certs/certificates/$DOMAIN.pem;
-ssl_certificate_key /.certs/certificates/$DOMAIN.key;
-```
+
 ``` bash
 # install dependencies
 $ yarn install
@@ -26,4 +22,10 @@ docker run --rm -v "$PWD/.certs":/.lego --env DO_AUTH_TOKEN="$DO_AUTH_TOKEN" goa
 
 #run in server 
 docker-compose up
+```
+
+update `nginx/default.conf` to match:
+``` bash
+ssl_certificate /.certs/certificates/$DOMAIN.pem;
+ssl_certificate_key /.certs/certificates/$DOMAIN.key;
 ```
